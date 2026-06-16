@@ -9,3 +9,13 @@ services:
       - .env
     volumes:
       - ./sessions:/app/.sessionsks
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    container_name: wpp_bot_api
+    restart: always
+    ports:
+      - "3000:3000"
+      
